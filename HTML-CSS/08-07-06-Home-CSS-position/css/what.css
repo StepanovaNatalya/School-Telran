@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: Montserrat, Helvetica, sans-serif;
+    color: white;
+}
+
+.container{
+    width: 900px;
+    margin: 0 auto;
+
+section.review{
+    padding: 50px;
+    color: black;
+}
+
+.review .container h2{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.review .container p{
+    text-align: center;
+    width: 60%;
+    margin: 0 auto 50px;
+}
+
+.cards{
+    padding: 50px 0;
+}
+
+.card{
+    display: inline-block;
+    margin: 0 20px;
+    width: calc(100%/3 - 40px);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 50px 20px 20px;
+    position: relative;
+}
+
+.card img.avatar{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 6px solid orange;
+    top: -30px;
+    left: -30px;
+    border-radius: 50%;
+}

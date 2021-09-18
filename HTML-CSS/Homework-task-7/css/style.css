@@ -1,0 +1,47 @@
+*{
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+body{
+    background: url(./../images/portfolio-portret.jpeg) no-repeat;
+    background-size: cover;
+    text-align: left;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+}
+
+/* Table style */
+.portfolio{
+    width: 40%;
+    height: 100vh;
+    margin: 0 0 0 60vw;
+}
+
+.section{
+    height: 50%;
+    box-sizing: border-box;
+    margin-top: 0;
+    margin-bottom: 0;   
+    border: 1px solid white; 
+    _padding: 0 0;
+}
+
+.section-top{
+    background-color: white;
+}
+
+.section-bottom{
+    background-color: black;
+    color: white;
+}
+
+.box-top{
+    height: 50px;
+    margin: auto 20px;
+    _padding: auto 20px;
+}
+
+h1{
+    font-weight: 400;
+}

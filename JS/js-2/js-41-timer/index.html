@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 41 Timer</title>
+    <script src="./main.js" defer></script>
+    <style>
+        .wrapper {
+            width: 320px;
+            height: 230px;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 2px solid black;
+            text-align: center;
+        }
+        input{
+            width: 220px;
+            height: 25px;
+            text-align: center;
+            font-size: x-large;
+        }
+        .btns{
+            margin-top: 20px;
+        }
+        button{
+            width: 80px;
+            height: 40px;
+            border-radius: 5px;
+            color: white;
+            border: 0;
+        }
+        .btn:disabled{
+            opacity: 0.65;
+            cursor: not-allowed;
+        }
+        .blau{
+            background-color: #65aaff;
+        }
+        .red{
+            background-color: #dc3645;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Timer</h1>
+        <input type="number" id="input" min="0">
+        <div class="btns">
+            <button class="btn blau">Start</button>
+            <button class="btn red">Stop</button>
+        </div>
+        <h2></h2>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+.wrapper{
+    width: 60%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+button{
+    width: 120px;
+    height: 50px;
+    background-color: rgb(23, 162, 143);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: rgba(23, 162, 143, 0.6);
+}    
+
+.content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    grid-template-rows: 170px 170px 170px;
+    margin-top: 40px;
+}
+
+.card{
+    border: 2px solid black;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 170px;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.j-card:hover{
+    background-color: rgba(23, 162, 143, 0.5);
+}
+
+.jazz{
+    background-color: rgba(23, 162, 143, 0.1);
+}
+
+.rock{
+    background-color: rgba(156, 236, 241, 0.249);
+}
+
+.blues{
+    background-color: rgba(149, 230, 45, 0.146);
+}

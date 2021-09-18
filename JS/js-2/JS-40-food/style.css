@@ -1,0 +1,137 @@
+.wrapper{
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.nav{
+    width: 100%;
+    height: 80px;
+    background-color: black;
+    padding: 0;
+}
+
+ul{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-left: 0;
+    padding: 0;
+}
+
+li{
+    width: 150px;
+    height: 80px;
+    list-style: none;
+    margin-left: 0;
+    margin-right: 0;
+    border: 1px solid white;
+    text-align: center;
+    line-height: 80px;
+    cursor: pointer;
+    transition: all 1s ease;
+}
+
+li:hover{
+    background-color: #4caf50;
+}
+
+.active{
+    background-color: #4caf50;
+    opacity: 0.8;
+}
+
+a{
+    display: block;
+    width: 100%;
+    height: 80px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 28px;
+    margin: 0;
+}
+
+#root{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 15px;
+    margin-top: 30px;
+}
+
+.card{
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 25px;
+    text-align: center;
+    background-color: #f5faf5;
+}
+
+img{
+    height: 40%;
+    width: 170px;
+}
+
+h2{
+    font-weight: 700;
+    color: #009500;
+    margin-bottom: 0;
+}
+
+p{
+    font-size: larger;
+    margin: 0 20px
+}
+
+h3{
+    margin-top: 0;
+    font-weight: 700;
+}
+
+h4{
+    margin: 5px auto 10px;
+}
+
+button{
+    width: 150px;
+    height: 40px;
+    background-color: #009500;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.table {
+    border: 1px solid #eee;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: larger;
+}
+.table th {
+    font-weight: bold;
+    padding: 15px;
+    background-color: #222222;
+    border: 1px solid #DDDDDD;
+    color: white;
+}
+.table td {
+    padding: 25px;
+    border: 1px solid #eee;
+    text-align: left;
+}
+.table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+.table tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.total{
+    width: 100px;
+    color: red;
+    margin-left: 76%;
+    font-size: larger;
+}

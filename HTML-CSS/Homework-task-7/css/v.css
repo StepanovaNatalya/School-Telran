@@ -1,0 +1,44 @@
+
+
+body{
+    color: rgb(236, 233, 233);
+}
+
+/* Main style*/
+section.portfolio{
+    background-color: rgb(101, 149, 237, 0.5);
+    height: 800px;
+}
+
+.portfolio img{
+    height: 600px;
+    float: left;
+    margin: 50px 80px 0 50px;
+}
+
+p.letter{
+    float: left;
+    font-size: 44rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text-box{
+    margin-left: -190px;
+    width: 500px;
+    float: left;
+    color: aliceblue;
+    padding-top: 220px;
+}
+.text-box h2{
+    font-size: 2rem;
+    width: 240px;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text-box p{
+    font-size: 20px;
+    line-height: 1.5;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 200;
+}

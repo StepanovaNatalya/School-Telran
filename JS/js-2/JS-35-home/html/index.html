@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator JS</title>
+    <style>
+        input, p, button{
+            display: inline-block;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Calculator</h2>
+    <div class="plus">
+        <br>
+        <input type="number" min="10" max="15" id="summe1">
+        <p>+</p>
+        <input type="number" id="summe2">
+        <button class="btn-sum">add</button>
+        <p class = "plus-text">0</p>
+    </div>
+    <div class="minus">
+        <br>
+        <input type="number" id="minus1">
+        <p>-</p>
+        <input type="number" id="minus2">
+        <button class="btn-minus">sub</button>
+        <p class="minus-text">0</p>
+    </div>
+    <div class="multiplication">
+        <br>
+        <input type="number" id="multi1">
+        <p>*</p>
+        <input type="number" id="multi2">
+        <button class="btn-multi">multiply</button>
+        <p class="multi-text">0</p>
+    </div>
+    <div class="division">
+        <br>
+        <input type="number" id="divis1">
+        <p>/</p>
+        <input type="number" id="divis2">
+        <button class="btn-divis">div</button>
+        <p>0</p>
+    </div>
+    <script src="./../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    width: 900px;
+    height: 600px;
+}
+
+.main{
+    width: 900px;
+    height: 600px;
+    box-sizing: border-box;
+    margin: 10px auto;
+    border: 1px solid blue;
+}
+
+.block{
+    width: calc(100%/2 - 0);
+    margin: 0 0;
+    float: left;
+    border: 1px solid black;
+}
+
+_img{
+    _width: 50%;
+    _height: 50%;
+}
+
+.block-left{
+    background: url(./../images/pexels-photo-7038226.jpeg);
+    
+}
+
+.block-right{
+    text-align: center;
+}

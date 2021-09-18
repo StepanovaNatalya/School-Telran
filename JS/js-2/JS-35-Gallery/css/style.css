@@ -1,0 +1,76 @@
+.gallery{
+    width: 80%;
+    height: 80vh;
+    margin: 0 auto;
+    
+}
+
+.animals{
+    background: url('./../images/animals.jpg') no-repeat;
+    background-position: center;
+}
+
+.bear{
+    background: url('./../images/bear.jpg') no-repeat;
+    background-position: center;
+}
+
+.belka{
+    background: url('./../images/belka.jpg') no-repeat;
+    background-position: center;
+}
+
+.birds{
+    background: url('./../images/birds.jpg') no-repeat;
+    background-position: center;
+}
+
+.birdsMore{
+    background: url('./../images/birdsMore.jpg') no-repeat;
+    background-position: center;
+}
+
+.fish{
+    background: url('./../images/fish.jpg') no-repeat;
+    background-position: center;
+}
+
+.fishingB{
+    background: url('./../images/fishingB.jpg') no-repeat;
+    background-position: center;
+}
+
+.frogs{
+    background: url('./../images/frogs.jpg') no-repeat;
+    background-position: center;
+}
+
+.hunting{
+    background: url('./../images/hunting.jpg') no-repeat;
+    background-position: center;
+}
+
+.insect{
+    background: url('./../images/insect.jpg') no-repeat;
+    background-position: center;
+}
+
+.monkey{
+    background: url('./../images/monkey.jpg') no-repeat;
+    background-position: center;
+}
+
+.suslik{
+    background: url('./../images/suslik.jpg') no-repeat;
+    background-position: center;
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn{
+    margin-left: 8px;
+}

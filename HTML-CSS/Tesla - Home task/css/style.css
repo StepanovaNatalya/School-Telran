@@ -1,0 +1,200 @@
+body{
+    font-family: Montserrat, sans-serif;
+}
+
+ul, li{
+    display: block;
+}
+
+.btn-link{
+    border: 2px solid #e51e3b;
+    padding: 7px 50px;
+    color: #e51e3b;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: x-small;
+}
+
+h3{
+    font-weight: 600;
+}
+
+p{
+    font-weight: 500;
+    font-size: smaller;
+}
+
+/* Header */
+#header{
+    height: 100vh;
+    min-height: 800px;
+}
+
+#header a{
+    width: 70px;
+    font-weight: 600;
+    margin: 5px 15px;
+    color: black;
+}
+
+#header a:hover{
+    border-bottom: 2px solid#e51e3b;;
+    color: #e51e3b;
+}
+
+#header ul li{
+    padding: ;
+}
+
+#header .car{
+    background: url(./../images/Tesla\ logo\ +\ car.png);
+    background-size: cover;
+    background-position: center;
+}
+
+#header h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+#header .header-text{
+    margin-bottom: 400px;
+}
+
+#header .speed img{
+    _width: 44px;
+    _height: 36px;
+}
+
+#header .number{
+    font-size: 1.7rem;
+    margin-top: -20px;
+}
+
+#header .km{
+    font-size: x-small;
+    margin-top: -20px;
+}
+
+#header .test{
+    font-size: small;
+    font-weight: 700;
+}
+
+#header .btn-link{
+    margin-left: -30px;
+    color: #e51e3b;
+}
+
+#header .vector-1{
+    width: 25px;
+}
+
+#header .arrow:hover{
+    border: none;
+}
+
+/* section Model */
+#model{
+    height: 100vh;
+    min-height: 800px;
+    background: url(./../images/2013-tesla-model-s-cockpit.jpg) no-repeat;
+    background-size: 80%;
+    background-position: left;
+}
+
+#model h1{
+    font-weight: 600;
+    margin-top: 60px;
+    margin-left: 60px;
+    color: #e51e3b;
+}
+
+#model .block-text{
+    background-color: #e51e3b;
+    color: white;
+}
+
+#model .btn-link{
+    color: white;
+    border-color: white;
+}
+
+#model .link{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 7px;
+    font-size: x-small;
+}
+
+#model .bag{
+    padding-bottom: 90px;
+}
+
+/* The safest car */
+.grey-car{
+    display: grid;
+    grid-template-columns: 3fr 9fr;
+    grid-auto-rows: minmax(100%, auto);
+}
+
+.box1{
+    background-color: #e51e3b;
+    color: white;
+}
+
+.rating-area {
+	overflow: hidden;
+	width: 280px;
+	margin: 0 auto;
+}
+.rating-area:not(:checked) > input {
+	display: none;
+}
+.rating-area:not(:checked) > label {
+	float: right;
+	width: 26px;
+	padding: 0;
+	cursor: pointer;
+	font-size: 26px;
+	line-height: 26px;
+	color: white;
+	text-shadow: 1px 1px #bbb;
+}
+
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+
+.stars{
+    padding-bottom: 80px;
+}
+
+.vector-g{
+    background: url(./../images/Vector\ g.png) no-repeat;
+    background-size: 60%;
+    background-position: center;
+}
+
+#safest strong{
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+@media screen and (max-width:762px) {
+    #header .menu{
+        display: none;
+    }
+
+    #header .menu a{
+        display: none;
+    }
+}
+
+@media screen and (max-width:360px) {
+    #header .menu{
+        display: none;
+    }
+}

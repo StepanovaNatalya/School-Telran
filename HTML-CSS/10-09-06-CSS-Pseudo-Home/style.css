@@ -1,0 +1,421 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Montserrat, Helvetica, sans-serif;
+    overflow: scroll;
+}
+
+ul{
+    list-style: none;
+}
+
+#header{
+    background: url(./images/bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    max-height: 800px;
+    color: white;
+    position: relative;
+}
+
+.container{
+    width: 800px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+nav{
+    padding: 30px 0;
+    overflow: hidden;
+}
+
+nav img{
+    float: left;
+    width: 60px;
+}
+
+nav ul{
+    background-color: rgba(45,45,45,0.3);
+    position: fixed;
+    width: 600px;
+    right: 0;
+    top: 40px;
+    z-index: 1;
+}
+
+nav ul li{
+    display: inline-block;
+    width: 120px;
+    padding: 15px 0px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    padding: 0 20px;
+}
+
+.sub-menu ul li a{
+    padding: 0;
+}
+
+nav ul li:hover, .sub-menu ul li:hover{
+    background-color: rgba(45,45,45,0.7);
+}
+
+.sub-menu ul{
+    position: absolute;
+    width: 100px;
+    display: none;
+    right: 105px;
+    z-index: -1;
+}
+
+.sub-menu ul li{
+    padding: 15px 20px;
+    width: 120px;
+}
+
+ul li:hover ul{
+    display: block;
+    margin-top: 10px;
+}
+
+.middle-box{
+    margin-top: 150px;
+    text-align: center;
+}
+
+.middle-box h1{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.middle-box p{
+    width: 60%;
+    margin: 15px auto;
+}
+
+.buttons{
+    text-align: center;
+    padding: 15px;
+}
+
+.btn{
+    border: 2px solid white;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    color: white;
+    margin: 0 10px;
+    padding: 5px 0;
+    font-size: 0.8rem;
+    line-height: 36px;
+}
+
+.btn img, .btn span{
+    vertical-align: middle;
+}
+
+.btn img{
+    margin-right: 5px;
+}
+
+.btn-more{
+    background-color: orange;
+}
+
+.btn:hover{
+    background-color: rgba(240, 198, 120, 0.66);
+}
+
+.btn-message{
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: orange;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.btn-message:hover{
+    border: 3px solid white;
+}
+
+.btn-top{
+    position: absolute;
+    position: fixed;
+    z-index: 1;
+    background: orange;
+    padding: 15px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    bottom: 90px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.btn-top:hover{
+    border: 3px solid white;
+}
+
+.btn-top a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Style Section-sport */
+#section-sport{
+    background: rgb(254, 254, 254);
+    background-size: cover;
+    height: 100vh;
+    max-height: 800px;
+    color: white;
+    position: relative;
+    padding-top: 80px;
+}
+
+.container-sport{
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+.block-top{
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    position: relative;
+}
+
+.circle{
+    width: 110px;
+    height: 110px;
+    border: 20px solid rgb(33, 183, 200);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+}
+
+.block-text{
+    display: inline-block;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(33, 183, 200);
+    position: absolute;
+    right: 0;
+    padding: 20px;
+}
+
+.section-sport h1{
+    font-weight: 400;
+}
+
+.sport-text{
+    margin-top: 10px;
+    margin-left: 0;
+    font-size: 70%;
+}
+
+.text-freepik{
+    font-style: italic;
+    font-size: 65%;
+}
+
+.freepik{
+    border-bottom: 1px solid white;
+}
+
+.btn-sport{
+    padding: 5px 25px;
+    margin-top: 15px;
+    background-color: rgb(254, 254, 254) ;
+    border: 1px solid rgb(254, 254, 254);
+}
+
+.btn-sport a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(33, 183, 200);
+    font-size: 80%;
+    font-weight: bold;
+}
+
+.block-img{
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    background: url(./images/try-min.jpeg);
+    background-size: cover;
+    position: relative;
+    bottom: 65px;
+    left: 15px;
+    box-shadow: 0 0 20px rgba( 0, 0, 0, 0.66);
+}
+
+.circle-full{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(33, 183, 200);
+    position: relative;
+    top: 250px;
+}
+
+.circle-img{
+    width: 150px;
+    height: 150px;
+    border: 10px solid rgb(33, 183, 200);
+    border-radius: 50%;
+    background: url(./images/sdfee.jpeg);
+    background-size: cover;
+    position: relative;
+    top: 105px;
+    left: 260px;
+}
+
+a#nav-top{
+    text-decoration: none;
+    color: #20baca;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Style Section-basketball */
+#section-basketball{
+    background: rgb(254, 254, 254);
+    background-size: cover;
+    height: 100vh;
+    max-height: 800px;
+    color: black;
+    position: relative;
+    padding-top: 30px;
+}
+
+.container-basketball{
+    width: 800px;
+    height: 100%;
+    background-color: rgb(57, 223, 17);
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.box-basketball{
+    width: 100%;
+    height: 90%;
+    margin: auto 0;
+    position: relative;
+}
+
+.block-basketball{
+    position: absolute;
+    display: inline-block;
+    width: 430px;
+    height: 50%;
+    top: 25%;
+    left: -6%;
+}
+
+.block-basketball h1{
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.text-basketball{
+    margin: 50px 0;
+}
+
+.text-basketball p{
+    font-weight: 600;
+}
+
+.btn-basketball{
+    padding: 5px 30px;
+    background-color: black;
+}
+
+.btn-basketball a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    font-size: 110%;
+}
+
+.img-basketball{
+    width: 430px;
+    height: 90%;
+    display: inline-block;
+    position: absolute;
+    background: url(./images/pexels-photo-3908076.jpeg);
+    background-size: cover;
+    right: -6%;
+}
+
+/* Coach section */
+section.coaching{
+    background: url(./images/portfolio-portret.jpeg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    max-height: 800px;
+}
+
+section.coaching .container{
+    width: 35%;
+    margin-left: 50%;
+    position: relative;
+}
+
+.about-me, .contacts{
+    background-color: white;
+    padding: 60px 20px;
+    height: 350px;
+}
+
+.about-me h2, .contacts h2{  /* section.coaching h2 */
+    font-size: 3rem;
+    font-weight: 200;
+    margin-bottom: 30px;
+}
+
+section.coaching p{
+    font-weight: 300;
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.about-me a{
+    color: black;
+}
+
+.contacts{
+    background-color: black;
+    color: white;
+}
+
+.contacts a{
+    color: white;
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.contacts p.phone-number{
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.contacts a span{
+    text-decoration: underline;
+}
