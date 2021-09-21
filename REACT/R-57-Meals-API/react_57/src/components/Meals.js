@@ -1,61 +1,63 @@
 import Loader from "./Loader"
-import React from "react"
+import React, { useState, useEffect } from "react"
 import Error from "./Error"
 import Meal from "./Meal"
 import FoodApi from "../data"
 
-export default class Meals extends React.Component{
-    state = {
-        loading: true,
-        meals: [],
-        error: null
+const Meals = ({ match }) => {
+    const [loading, setLoading] = useState(true);
+    const [meals, setMeals] = useState([]);
+    const [error, setError] = useState(null)
+
+    const category = match.params.category
+
+    useEffect(() => {
+            setLoading(true);
+            setError(null)
+            FoodApi.getMealsByCategory(category)
+                .then(data => {
+                    setTimeout(() => {
+                        if(data.meals){
+                        setLoading(false)
+                        setMeals(data.meals)
+                        }else{
+                            setError('no such category')
+                            setLoading(false)
+                        }
+                        
+                    }, 1000)})
+                .catch((error) => {
+                    setLoading(false);
+                    setError(error.message)
+                })
+    },[category])
+
+
+
+    const renderMeals = () => {
+        return loading && !error ? <Loader /> : error ? <Error message={error} /> :
+            meals.map(meal => <Meal key={meal.idMeal} meal={meal} />)
     }
 
-    renderMeals(){
-        const {loading, meals, error} = {...this.state}
-        return loading && !error ? <Loader /> : error ? <Error message = {error}/>:
-        meals.map(meal => <Meal key = {meal.idMeal} meal = {meal}/>)
-    }
-
-    componentDidMount(){
+    /* componentDidMount(){
         this.componentChangeCountry(this.props.country)
     }
 
     componentDidUpdate(prevProps){
-        if(prevProps.country !== this.props.country)
-        this.componentChangeCountry(this.props.country)
-    
-    }
+        if (prevProps.country !== this.props.country)
+            this.componentChangeCountry(this.props.country)
 
-    componentChangeCountry(country){
-        this.setState({...this.state, loading: true, error: null})
-        FoodApi.getMealsByCountry(country)
-        .then(data =>{
+    } */
 
-            setTimeout(()=>{
-                this.setState({
-                    ...this.state,
-                    loading: false,
-                    meals: [...data.meals]
-                })
-            }, 1500)
-        })
-        .catch((error)=>{
-            this.setState({
-                ...this.state,
-                loading: false,
-                error: error.message
-            })
-        })
-    
-    }
-    
-
-    render(){
-        return(
-            <div className = 'row'>
-                {this.renderMeals()}
+        return (
+            <div className ='container'>
+                <h2 className = 'text-primary text-center my-5'>{category}</h2>
+            <div className='row'>
+                {renderMeals()}
+            </div>
             </div>
         )
-    }
+  
 }
+
+export default Meals

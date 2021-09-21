@@ -1,37 +1,55 @@
 import './App.css';
-import Countries from './components/Countries';
-import React from 'react';
-import Meals from './components/MealsF';
+import Categories from './components/Categories';
+import { Switch, Route } from 'react-router-dom';
+import Meals from './components/Meals';
+import MealsDetails from './MealsDetails';
 
-export const CountryContext = React.createContext();
+// export const CategoryContext = React.createContext();
 
-class App extends React.Component {
-  state = {
-    currentCountry: null
+const App=()=>{
+ 
+
+  
+    return (
+      <Switch>
+        <Route exact path ="/" component = {Categories}/>
+        <Route exact path ="/:category" component = {Meals}/>
+        <Route path = "/:category/:idMeal" component = {MealsDetails}/>
+      </Switch>
+    )
+  
+}
+
+export default App;
+
+// witout Router
+
+/* const App=()=>{
+  const [category, setCategory] = useState(null)
+
+  const changeCategory = (category) => {
+    setCategory(category)
   }
 
-  changeCountry = (country) => {
-    this.setState({ ...this.state, currentCountry: country })
-  }
-
-  render() {
+  
     return (
       <>
-      <CountryContext.Provider value = {{
-        changeCountry: this.changeCountry
+      <CategoryContext.Provider value = {{
+        changeCategory,
+        category
       }} >
         <div className='container my-5'>
-          <Countries />
+          <Categories />
         </div>
-        </CountryContext.Provider>
+        </CategoryContext.Provider>
         <div className='container my-5'>
-          {this.state.currentCountry ? <Meals country={this.state.currentCountry} /> : null}
+          {category ? <Meals category={category} /> : null}
 
         </div>
       </>
-    );
-  }
-}
+    )
+  
+} */
 
 
-export default App;
+

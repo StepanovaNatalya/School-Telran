@@ -1,0 +1,16 @@
+{
+  "name": "messagenger-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --mode development"
+  },
+  "author": "Natalya Stepanova",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  }
+}
