@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-item a, a.nav-item{
+   display: block;
+   padding: .5rem 1rem;
+   color: rgba(255, 255, 255, 0.5);
+   text-decoration: none;
+   transition: all 0.2s ease-in-out;
+}
+
+.nav-item a:hover, .nav-item a.active{
+   color: #fff;
+}
