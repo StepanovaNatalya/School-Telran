@@ -9,6 +9,7 @@ import Registration from './components/Registration';
 import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import { getAlbums, setAlbumsToLocalStorage } from './data/albumsData';
+import { getPhotos, setPhotosToLocalStorage } from './data/photosData';
 
 export const AppContext = React.createContext()
 
@@ -74,6 +75,18 @@ function App() {
     return albums.filter(album => album.userId === currentUser)
   }
 
+  const [photos, setPhotos] = useState(getPhotos())
+
+  const addNewPhoto = photo =>{
+    const newPhotos = [...photos, {...photo, idPhoto:Date.now()}]
+    setPhotos(newPhotos)
+    setPhotosToLocalStorage(newPhotos)
+  }
+
+  const currentUserPhotos = ()=>{
+    return photos.filter(photo => photo.albumId === currentUser)
+  }
+
   return (
     <AppContext.Provider value = {{
       users,
@@ -85,7 +98,9 @@ function App() {
       getCurrentUser,
       updateUser,
       addNewAlbum,
-      currentUserAlbums
+      currentUserAlbums,
+      addNewPhoto,
+      currentUserPhotos
     }} >
       <Navigation />
       <Switch>
