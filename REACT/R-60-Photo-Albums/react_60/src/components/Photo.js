@@ -1,4 +1,4 @@
-const Photo = ({photo})=>{
+/* const Photo = ({photo})=>{
     return (
         <div className="card col-6 col-sm-4 col-md-3 text-center p-3 m-1">
             <img src={photo.cover} className="card-img-top" alt="..." />
@@ -10,4 +10,4 @@ const Photo = ({photo})=>{
     )
 }
 
-export default Photo
+export default Photo */

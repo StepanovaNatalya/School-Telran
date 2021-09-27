@@ -10,6 +10,7 @@ import Login from './components/Login';
 import UserProfile from './components/UserProfile';
 import { getAlbums, setAlbumsToLocalStorage } from './data/albumsData';
 import { getPhotos, setPhotosToLocalStorage } from './data/photosData';
+import AlbumPhotos from './components/AlbumPhotos';
 
 export const AppContext = React.createContext()
 
@@ -75,17 +76,27 @@ function App() {
     return albums.filter(album => album.userId === currentUser)
   }
 
+  const getAlbumTitleById =(id)=>{
+    return albums.find(album => album.id === +id).title
+  }
+
   const [photos, setPhotos] = useState(getPhotos())
 
   const addNewPhoto = photo =>{
-    const newPhotos = [...photos, {...photo, idPhoto:Date.now()}]
+    const newPhotos = [...photos, {...photo, id:Date.now(), like:0, dislike:0}]
     setPhotos(newPhotos)
     setPhotosToLocalStorage(newPhotos)
   }
 
-  const currentUserPhotos = ()=>{
-    return photos.filter(photo => photo.albumId === currentUser)
+  const addEvolution = (id, key)=>{
+    const newPhotos = [...photos]
+    const index = photos.findIndex(photo => photo.id === id)
+    newPhotos[index][key]++
+    setPhotos(newPhotos)
+    setPhotosToLocalStorage(newPhotos)
   }
+
+  
 
   return (
     <AppContext.Provider value = {{
@@ -100,12 +111,18 @@ function App() {
       addNewAlbum,
       currentUserAlbums,
       addNewPhoto,
-      currentUserPhotos
+      photos,
+      albums,
+      getAlbumTitleById,
+      addEvolution,
+      
     }} >
       <Navigation />
       <Switch>
-        <Route path = "/user/:id" component = {UserProfile}/>     
+        <Route exact path ="/album/:id/:author" component = {AlbumPhotos} />
+        <Route exact path = "/user/:id" component = {UserProfile}/>     
         <Route path ="/users" component ={Users} /> 
+        <Route path = "/albums/user/:id" component = {Albums}/>
         <Route path ="/albums" component ={Albums} />
         <Route path ="/login" component = {Login} />
         <Route path = "/registration" component = {Registration} />
