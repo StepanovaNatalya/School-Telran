@@ -1,7 +1,10 @@
 import * as Types from './actionsType'
 
 const init = {
-    posts: []
+    posts: [],
+    title:'',
+    text:'',
+    name:''
 }
 
 export default function postReducer(state=init, {type, payload}) {
