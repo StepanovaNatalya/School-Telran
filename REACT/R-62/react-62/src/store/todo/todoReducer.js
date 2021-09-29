@@ -6,13 +6,13 @@ const init = {
 
 export default function todoReducer(state = init, {type, payload}) {
     switch(type){
-        case Types.ADD_TODO:
+        case Types.add:
             return {
                 ...state,
                 todos: [...state.todos, {text: payload.text, status: false}]
             }
 
-        case Types.REMOVE_TODO:
+        case Types.remove:
             const tmpTodos = [...state.todos]
             tmpTodos.splice(payload.index, 1)
             return{
@@ -20,7 +20,7 @@ export default function todoReducer(state = init, {type, payload}) {
                 todos:[...tmpTodos]
             } 
             
-        case Types.CHANGE_STATUS:
+        case Types.change:
             const tempTodo = [...state.todos]
             tempTodo[payload.index] = {...tempTodo[payload.index], status: payload.status}
             return{

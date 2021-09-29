@@ -1,4 +1,4 @@
-import * as Action from './actionsType'
+import {counterActionType as Action} from './actionsType'
 
 const initState = {
     count: 0
@@ -6,13 +6,13 @@ const initState = {
 
 export default function reducer(state= initState, {type, payload}) {
     switch(type){
-        case Action.INC:
+        case Action.inc:
             return {...state, count: state.count +1}
-        case Action.DEC:
+        case Action.dec:
             return {...state, count: state.count -1}    
-        case Action.ADD_NUM:
+        case Action.addNum:
             return {...state, count: state.count + payload.num}    
-        case Action.SUB_NUM:
+        case Action.subNum:
             return {...state, count: state.count - payload.num}    
         default:
             return state

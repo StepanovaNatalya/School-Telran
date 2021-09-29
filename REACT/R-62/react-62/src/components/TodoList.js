@@ -1,6 +1,6 @@
 import TodoRow from './TodoRow'
 import { connect } from 'react-redux'
-import { REMOVE_TODO, CHANGE_STATUS } from '../store/actionsType'
+
 
 const TodoList=({todos, changeStatus, removeTodo})=> {
     return(
@@ -19,9 +19,9 @@ const TodoList=({todos, changeStatus, removeTodo})=> {
     )
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = ({todosReducer}) =>{
     return{
-        todos:state.todos || []
+        todos:todosReducer.todos || []
     }
 }
 

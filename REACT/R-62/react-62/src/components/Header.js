@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { ADD_TODO } from "../store/actionsType"
 import { connect } from "react-redux"
+import * as Actions from './../../store/todo/ActionCreator'
 
 const Header = ({addTodo})=>{
     const [input, setInput] = useState('')

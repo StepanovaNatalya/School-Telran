@@ -1,13 +1,17 @@
 import Header from './components/Header';
 import TodoList from './components/TodoList';
 import './App.css';
+import Counter from './components/Counter';
 
-function App() {
+
+function App({todos}) {
   return (
     <div className="App">
-        <Header />
-        <hr/>
-        <TodoList />
+      <Counter />
+      <hr />
+      <Header />
+      <hr />
+      <TodoList todos = {todos}/>
     </div>
   );
 }

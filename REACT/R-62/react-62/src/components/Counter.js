@@ -1,33 +1,32 @@
 import {connect} from 'react-redux'
-import * as Actions from './../store/actionsType'
-
-function Counter(props) {
+// import {counterActionType as Actions} from './../store/actionsType'
+import * as Actions from './../store/counter/ActionCreator'
+const Counter = ({count,inc,dec, addNum,subNum})=> {
     console.log(props, 'state from component')
     return(
         <>
-           <h2>Count: {props.count}</h2>
-           <button onClick= {props.subCount}>-</button>
-           <button onClick= {props.addCount}>+</button>
+           <h2>Count: {count}</h2>
+           <button onClick= {dec}>-</button>
+           <button onClick= {inc}>+</button>
            <br/>
-           <button onClick = {()=>props.addNum(15)}>Add 15</button>
-           <button onClick = {()=>props.subNum(20)}>Sub 20</button>
+           <button onClick = {()=>addNum(15)}>Add 15</button>
+           <button onClick = {()=>subNum(20)}>Sub 20</button>
         </>
     )
 }
 
-function mapStateToProps(state){
-    console.log(state, 'STATE FROM STORE')
+const mapStateToProps = ({counterReducer})=>{
     return{
-        count: state.count
+        count: counterReducer.count
     }
 }
 
-function mapDispatchToProps(dispatch) {
+const mapDispatchToProps = dispatch=> {
     return{
-        addCount: ()=>dispatch({type: Actions.INC}),
-        subCount: ()=>dispatch({type: Actions.DEC}),
-        addNum: (num)=>dispatch({type: Actions.ADD_NUM, payload:{num}}),
-        subNum: (num)=>dispatch({type: Actions.SUB_NUM, payload:{num}})   
+        inc: ()=>dispatch(Actions.incCount),
+        dec: ()=>dispatch(Actions.decCount),
+        addNum: (num)=>dispatch(Actions.addNum(num)),
+        subNum: (num)=>dispatch(Actions.subNum(num))   
     }
 }
 
