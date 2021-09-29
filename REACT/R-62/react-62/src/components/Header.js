@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { ADD_TODO } from "../store/actionsType"
+// import { ADD_TODO } from "../store/actionsType"
 import { connect } from "react-redux"
-import * as Actions from './../../store/todo/ActionCreator'
+import Types from "../store/todo/ActionTypes"
 
 const Header = ({addTodo})=>{
     const [input, setInput] = useState('')
@@ -21,7 +21,7 @@ const Header = ({addTodo})=>{
 
 const mapDispatchToProps = dispatch =>{
     return{
-        addTodo: (text)=> dispatch({type: ADD_TODO, payload:{text}})
+        addTodo: (text)=> dispatch({type: Types.add, payload:{text}})
     }
 }
 

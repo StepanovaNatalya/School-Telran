@@ -5,7 +5,8 @@ export const addTodo = ({index, todo})=>{
         type: Types.add,
         payload:{
             todo,
-            index
+            index,
+            // id: Data.now()
         }
     }
 }

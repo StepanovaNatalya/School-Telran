@@ -1,4 +1,4 @@
-import * as Types from './actionsType'
+import Types from './actionsType'
 
 const init = {
     todos:[]
