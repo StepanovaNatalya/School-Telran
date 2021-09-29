@@ -1,37 +1,18 @@
-import { Route, Switch } from 'react-router-dom';
 import React, {useState} from 'react';
 import Navigation from './components/Navigation';
-import Users from './components/Users';
-import Albums from './components/Albums';
-import Home from './components/Home';
-import {getUsers, getCurrentUserId, setCurrentUserLocalStorage, setUsersToLocalStorage, login, resetCurrentUser} from './data/usersData';
-import Registration from './components/Registration';
-import Login from './components/Login';
-import UserProfile from './components/UserProfile';
+import {getUsers, getCurrentUser, setCurrentUserLocalStorage, setUsersToLocalStorage, login, resetCurrentUser} from './data/usersData';
 import { getAlbums, setAlbumsToLocalStorage } from './data/albumsData';
 import { getPhotos, setPhotosToLocalStorage } from './data/photosData';
-import AlbumPhotos from './components/AlbumPhotos';
+import Page from './components/Page'
 
 export const AppContext = React.createContext()
 
 function App() {
   const [users, setUsers] = useState(getUsers());
-  const [currentUser, setCurrentUser] = useState(getCurrentUserId());
+  const [currentUser, setCurrentUser] = useState(getCurrentUser());
   //const [error, setError] = useState (null)
 
-  const addUser = (user)=>{
-    const isUserExist = users.some(u => u.email === user.email)
-    if(!isUserExist){
-    const newUser = {...user, id: Date.now()}
-    const newUsersArray = [...users, newUser]
-    setUsers(newUsersArray)
-    setUsersToLocalStorage(newUsersArray)
-    setCurrentUser(newUser.id)
-    setCurrentUserLocalStorage(newUser.id)
-    return true
-    }
-    return false
-  }
+  
 
   const changeCurrentUser = (currentUser) =>{
     const idUser = login(currentUser)
@@ -43,9 +24,9 @@ function App() {
       return false
   }
 
-  const getCurrentUser = ()=>{
+  /* const getUser = ()=>{
     return users.find(user => user.id === currentUser)
-  }
+  } */
 
   const getUserNameById = (id)=>{
     return users.find(user => +user.id === id).fName
@@ -96,12 +77,9 @@ function App() {
     setPhotosToLocalStorage(newPhotos)
   }
 
-  
-
   return (
     <AppContext.Provider value = {{
       users,
-      addUser,
       changeCurrentUser,
       currentUser,
       getUserNameById,
@@ -118,16 +96,7 @@ function App() {
       
     }} >
       <Navigation />
-      <Switch>
-        <Route exact path ="/album/:id/:author" component = {AlbumPhotos} />
-        <Route exact path = "/user/:id" component = {UserProfile}/>     
-        <Route path ="/users" component ={Users} /> 
-        <Route path = "/albums/user/:id" component = {Albums}/>
-        <Route path ="/albums" component ={Albums} />
-        <Route path ="/login" component = {Login} />
-        <Route path = "/registration" component = {Registration} />
-        <Route path ="/" component ={Home} />
-      </Switch>
+      <Page />
     </AppContext.Provider>
   );
 }
