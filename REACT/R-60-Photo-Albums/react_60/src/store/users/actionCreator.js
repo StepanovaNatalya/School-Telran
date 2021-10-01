@@ -1,21 +1,22 @@
-import Types from "./actionTypes";
-import * as UsersData from './../../data/usersData'
+import Types from './actionTypes';
+import * as UsersData from './../../data/usersData';
 
 export const initialState = () => {
     return dispatch => {
         dispatch({ type: Types.load })
-        try {
-            setTimeout(() => {
+        setTimeout(() => {
+            try {
                 const data = {
                     users: UsersData.getUsers(),
                     currentUser: UsersData.getCurrentUser()
                 }
+
                 dispatch({ type: Types.initState, payload: { ...data } })
-            }, 2000)
-        } catch (e) {
-            dispatch({ type: Types.error, payload: e.message })
-            console.log(e.message)
-        }
+            } catch (e) {
+                console.log(e.message)
+            }
+        }, 2000)
+
     }
 }
 
@@ -31,39 +32,76 @@ export const registration = (user) => {
                         payload: newUser
                     })
                 } else {
-                    throw new Error('user srecified email is already exist')
+                    throw new Error('user specified email is already exist')
                 }
+
             } catch (e) {
-                dispatch({ type: Types.error, payload: e.message })
+                dispatch({ type: Types.error, payload: {registration:e.message }})
             }
+
         }, 2000)
 
     }
+
 }
 
-const logout = () => {
+export const login = data => {
+    return dispatch => {
+        dispatch({ type: Types.load })
+        setTimeout(() => {
+            try {
+                const user = UsersData.loginUser(data);
+                if(user){
+                    UsersData.setCurrentUserLocalStorage(user)
+                    dispatch({type: Types.login, payload:user})
+                }else{
+                    throw new Error('password or email is wrong')
+                }
+            } catch(e) {
+                dispatch({type: Types.error, payload:{login: e.message}})
+            }
+        }, 2000)
+    }
+}
+
+// promiss().then(return result).catch() // 
+
+export const logout = () => {
     return ({
         type: Types.logout
     })
 }
-/*  const isUserExist = users.some(u => u.email === user.email)
- if (!isUserExist) {
-     const newUser = { ...user, id: Date.now() }
-     const newUsersArray = [...users, newUser]
-     setUsers(newUsersArray)
-     setUsersToLocalStorage(newUsersArray)
-     setCurrentUser(newUser)
-     setCurrentUserLocalStorage(newUser)
-     return true
- }
- return false */
 
+export const updateUser = data =>{
+    return dispatch =>{
+        dispatch({type: Types.load})
+        setTimeout(()=>{
+            try{
+                const newUsers = [...UsersData.getUsers()]
+                const index = newUsers.findIndex(user => user.id ===data.id)
+                newUsers[index] = data;
+                UsersData.setUsersToLocalStorage(newUsers);
+                UsersData.setCurrentUserLocalStorage(data)
+                dispatch({
+                    type: Types.editUser,
+                    payload:{
+                        users: [...newUsers],
+                        currentUser: data
+                    }
+                })
+            }catch(e){
+                console.log(e.message)
+            }
+
+        },1000)
+    }
+}
 
 
 const createUser = user => {
-    const users = UsersData.getUsers()
-    const isEmailExist = users.some(u => u.email === user.email)
-    if (!isEmailExist) {
+    const users = UsersData.getUsers();
+    const isEMailExist = users.some(u => u.email === user.email);
+    if (!isEMailExist) {
         user = { ...user, id: Date.now() }
         users.push(user)
         UsersData.setUsersToLocalStorage(users)

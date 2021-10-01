@@ -1,23 +1,26 @@
-import { Link, useHistory } from "react-router-dom"
+import { Link, useHistory } from 'react-router-dom'
 import {connect} from 'react-redux'
-import { initialState } from "../store/users/actionCreator"
-import { useEffect } from "react"
+import { initialState, logout } from '../store/users/actionCreator'
+import { useEffect} from 'react'
+import { resetCurrentUser } from '../data/usersData'
 
-const Auth = ({ currentUser, initial, loading, users })=>{
+const Auth = ({currentUser, initial, loading, users, userLogout})=>{
     
-    useEffect(()=>{
-        if(users.length === 0)
+    useEffect(()=>{ 
+        if(users.length ===0)
         initial()
+        // eslint-disable-next-line
     }, [])
+
     const history = useHistory()
-    return (
-        <>
-        <>
+ return (
+     <>
      {loading ? <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> : currentUser ? <>
                 <li className ="text-white me-3 list-unstyled">{`Hi, ${currentUser.fName}!`}</li>
                 <li className ="text-white list-unstyled"
                     onClick = {()=>{
-                        //logout()
+                        userLogout()
+                        resetCurrentUser()
                         history.push('/')
                     }}
                     style = {{cursor :'pointer'}}
@@ -30,12 +33,10 @@ const Auth = ({ currentUser, initial, loading, users })=>{
                 } 
          
      </>
-
-        </>
-    )
+ )
 }
 
-const mapStateToProps =({usersReducer})=>{
+const mapStateToProps = ({usersReducer})=>{
     return{
         currentUser: usersReducer.currentUser,
         loading: usersReducer.loading,
@@ -43,9 +44,10 @@ const mapStateToProps =({usersReducer})=>{
     }
 }
 
-const mapDispatchToProps = dispatch =>{
+const mapDispatchToProps = dispatch => {
     return{
-        initial: ()=>dispatch(initialState())
+        initial: ()=>dispatch(initialState()),
+        userLogout: ()=>dispatch(logout())
     }
 }
 

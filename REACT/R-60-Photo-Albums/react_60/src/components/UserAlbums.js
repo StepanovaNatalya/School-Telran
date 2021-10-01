@@ -3,13 +3,13 @@ import { AppContext } from '../App'
 import UserAlbum from './UserAlbum'
 import UserPhotos from './UserPhotos'
 
-const UserAlbums = ()=>{
-    const {currentUser, addNewAlbum, currentUserAlbums} = useContext(AppContext)
+const UserAlbums = ({currentUser})=>{
+    const { addNewAlbum, currentUserAlbums} = useContext(AppContext)
 
     const [album, setAlbum] = useState({
         title: '',
         cover: '',
-        userId: currentUser,
+        userId: currentUser.id,
     })
 
     const changeFieldHandler = event=>{
@@ -36,7 +36,7 @@ const UserAlbums = ()=>{
                         <div className="modal-header">
                             <h5 className="modal-title" >Make your new photo album</h5>
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                            onClick = {()=> {addNewAlbum(album)
+                            onClick = {()=> {
                                 setAlbum({...album, title:'', cover:''})
                             }}></button>
                         </div>

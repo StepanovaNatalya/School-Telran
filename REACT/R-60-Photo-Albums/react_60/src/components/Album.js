@@ -2,10 +2,10 @@ import { useContext } from "react"
 import { AppContext } from "../App"
 import { useHistory } from "react-router-dom"
 
-const Album = ({ album }) => {
-    const { getUserNameById } = useContext(AppContext)
+const Album = ({ album, userName }) => {
+    const { getCountPhotoByAlbumId } = useContext(AppContext)
     const history = useHistory()
-    const userName = getUserNameById(album.userId)
+    
 
     return (
         <div className="col">
@@ -15,6 +15,7 @@ const Album = ({ album }) => {
                 </div>
                 <h5 className="card-title">{album.title}</h5>
                 <p>album by: {userName}</p>
+                <p>{getCountPhotoByAlbumId(album.id)} pictures</p>
                 <button className="btn btn-primary btn-sm mb-3"
                     onClick={() => {
                         history.push(`/album/${album.id}/${userName}`)

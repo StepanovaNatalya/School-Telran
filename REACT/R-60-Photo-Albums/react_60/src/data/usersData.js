@@ -19,7 +19,7 @@ export const resetCurrentUser = ()=>{
     localStorage.removeItem('currentUser')
 }
 
-export const login = (currentUser) =>{
-    const user = getUsers().find(u => u.email === currentUser.email)
-    return user ? (user.password === currentUser.password ? user.id : null) : null
+export const loginUser = (data) =>{
+    const user = getUsers().find(u => u.email === data.email)
+    return user ? (user.password === data.password ? user : null) : null
 }
