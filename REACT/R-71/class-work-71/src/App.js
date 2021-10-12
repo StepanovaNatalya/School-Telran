@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Button, { SuccessButton } from './styled/Button';
+import Container from './styled/Container';
+
+// import { getPosts, testAddPost } from './service/api';
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container >
+       <Button primary onClick ={()=>console.log('registration')}>registration</Button>
+       <Button >login</Button>
+       <SuccessButton>send</SuccessButton>
+    </Container>
   );
 }
 
 export default App;
+
+/* function App() {
+  // getPosts()
+  testAddPost()
+  return (
+    <div className="App">
+      
+    </div>
+  );
+} */
