@@ -8,11 +8,10 @@ const AppHeader = ({totalPrice}) => {
     return (
         <header className="header">
             <Link to='/' className='header__link'>Menu</Link>
-            <Link to= '/cart' className='header__link'>
+            <Link to='/cart' className='header__link'>
                 <img className='header__cart' src={cartIcon} alt='cart' />
                 Total: $ {totalPrice}
             </Link>
-            <Link to = '/order' className='header__link'>My order</Link>
         </header>
     )
 };

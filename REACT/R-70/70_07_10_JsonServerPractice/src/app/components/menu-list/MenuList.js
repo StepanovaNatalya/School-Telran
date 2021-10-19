@@ -1,13 +1,11 @@
 import './MenuList.css';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { getMenu, addItemToCart } from './../../../store/ActionCreator';
-import Loader from './../loader/Loader';
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { getMenu, addItemToCart } from './../../../store/ActionCreator'
+import Loader from './../loader/Loader'
 import Food from './../../img/big-food.jpg'
-import Order from '../order/Order';
 
-
-function MenuList({menu, isLoading, error, getData, addToCart}) {
+function MenuList({ menu, isLoading, error, getData, addToCart }) {
   return (
     <>{isLoading ? <Loader /> : <>
       {menu.length === 0 ? <div>
@@ -25,7 +23,7 @@ function MenuList({menu, isLoading, error, getData, addToCart}) {
                   <div className = 'menu__title'>{item.title}</div>
                   <img className = 'menu__img' src = {item.url} alt = {item.title}/>
                   <div className = 'menu__category'>Category: <span>{item.category}</span></div>
-                  <div className = 'menu__price'>Price: <span>{item.price} $</span></div>
+                  <div className = 'menu__price'>Price: <span>{item.price}</span></div>
                   <button className ='menu__btn' onClick = {(e)=>{
                     e.preventDefault()
                     addToCart(item.id)
@@ -41,25 +39,24 @@ function MenuList({menu, isLoading, error, getData, addToCart}) {
       } 
       
     </>}
-      <Order />
+      
     </>
   )
 };
 
-const mapStateToProps = ({menu, isLoading, error})=>{  
-  return{
+const mapStateToProps = ({ menu, isLoading, error }) => {
+  return {
     menu,
     isLoading,
     error
   }
 }
 
-const mapDispatchToProps = dispatch =>{
-  return{
-    getData: ()=> dispatch(getMenu()),
+const mapDispatchToProps = dispatch => {
+  return {
+    getData: () => dispatch(getMenu()),
     addToCart: (id)=>dispatch(addItemToCart(id))
   }
 }
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuList);
