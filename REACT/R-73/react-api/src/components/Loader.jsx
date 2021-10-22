@@ -11,6 +11,17 @@ const LoaderContainer = styled.div`
     bottom:0;
     top:0;
 `
+
+
+const rotate = keyframes`
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+`
+
 const Ring = styled.div`
     display:inline-block;
     width:80px;
@@ -25,15 +36,6 @@ const Ring = styled.div`
         border: 6px solid #000;
         border-color:#000 transparent #000 transparent;
         animation: ${rotate} 1.2s linear infinite;
-    }
-`
-
-const rotate = keyframes`
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg)
     }
 `
 
